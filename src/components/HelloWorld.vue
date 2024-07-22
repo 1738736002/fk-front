@@ -1,10 +1,11 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="greetings">
-    hello world
-  </div>
+  <div class="greetings">hello world</div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.greetings {
+  color: red;
+}
+</style>
