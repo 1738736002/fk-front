@@ -1,5 +1,3 @@
-import './assets/main.css'
-import 'reset-css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -7,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 import '@unocss/reset/tailwind.css'
 import 'virtual:uno.css'
+import './assets/main.css'
 
 const app = createApp(App)
 

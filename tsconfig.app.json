@@ -1,6 +1,14 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "./typed-router.d.ts"],
+  "include": [
+    "env.d.ts",
+    "*.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "src/*.vue",
+    "auto-imports.d.ts",
+    "typed-router.d.ts"
+  ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
@@ -9,8 +17,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext"
+    }
   }
 }
