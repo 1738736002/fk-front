@@ -7,6 +7,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import Layouts from 'vite-plugin-vue-layouts'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -23,7 +25,7 @@ export default defineConfig({
         /\.md$/ // .md
       ],
       dts: true,
-      imports: ['vue', '@vueuse/core'],
+      imports: ['vue', '@vueuse/core', 'vue-router'],
       eslintrc: {
         enabled: false,
         filepath: './.eslintrc-auto-import.json'
@@ -33,6 +35,23 @@ export default defineConfig({
       directoryAsNamespace: false,
       collapseSamePrefixes: false,
       allowOverrides: false
+    }),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      pagesDirs: 'src/pages',
+      defaultLayout: 'defaultLayout'
+    }),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'My Awesome App',
+        short_name: 'MyApp',
+        description: 'My Awesome App description',
+        theme_color: '#ffffff'
+      },
+      workbox: {
+        cleanupOutdatedCaches: false
+      }
     })
   ],
   resolve: {
