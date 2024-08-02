@@ -1,19 +1,12 @@
 <template>
-  <div>
-    home page
-    <div class="p5 color-blue">p5 ...213</div>
-    <p>x: {{ x }}</p>
-    <p>y: {{ y }}</p>
-    <p>isOutside: {{ isOutside }}</p>
-  </div>
-  <HelloWorld />
+  <h4>home</h4>
   <ReloadPrompt></ReloadPrompt>
 </template>
 
 <script setup lang="ts">
 import { registerSW } from 'virtual:pwa-register'
+import { RouterLink } from 'vue-router'
 const target = ref(null)
-const { x, y, isOutside } = useMouseInElement(target)
 onMounted(() => {
   registerSW({
     immediate: true,

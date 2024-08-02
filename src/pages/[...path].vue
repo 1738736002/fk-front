@@ -1,5 +1,5 @@
 <template>
-  <div>about page</div>
+  <div>not font</div>
 </template>
 
 <script setup></script>
@@ -7,6 +7,6 @@
 <style lang="scss" scoped></style>
 <route lang="yaml">
 meta:
-  layout: defaultLayout
+  layout: 404
   bgColor: yellow
 </route>

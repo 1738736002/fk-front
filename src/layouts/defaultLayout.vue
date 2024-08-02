@@ -2,7 +2,9 @@
   <div class="layout">
     <header :style="`background: ${bgColor};`">
       <!-- Header content goes here -->
-      头部
+      <RouterLink to="/">Home</RouterLink>
+      <span> | </span>
+      <RouterLink to="/about">About</RouterLink>
     </header>
     <main>
       <!-- Content area goes here -->
